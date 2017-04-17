@@ -1,3 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 import './App.css';
 
-console.log('hello! YOOOO');
+ReactDOM.render(
+  <div>hello</div>,
+  document.getElementById('root')
+)
