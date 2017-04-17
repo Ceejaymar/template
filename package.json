@@ -1,0 +1,31 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "prod": "webpack -p",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ceejaymar/template.git"
+  },
+  "keywords": [],
+  "author": "Carlos Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ceejaymar/template/issues"
+  },
+  "homepage": "https://github.com/Ceejaymar/template#readme",
+  "devDependencies": {
+    "eslint": "^3.14.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^2.4.1"
+  }
+}
