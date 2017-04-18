@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -25,11 +25,22 @@ module.exports = {
         test:/\.css$/,
         use: cssConfig
       },
-      { test: /\.js$/, exclude: /node_modules/, use: "babel-loader" }
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        use: [
+          'file-loader?name=images/[name].[ext]',
+          'image-webpack-loader'
+        ]
+      }
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
     stats: 'minimal',
@@ -39,13 +50,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       // favicon: 'add path to favicon',
+      // filename: '../index.html',
     title: 'Template',
     minify: {
       collapseWhitespace: true
     },
-    // filename: '../index.html',
-    template: './src/index.ejs', // Load a custom template (ejs by default see the FAQ for details)
-  }),
+    template: './src/index.ejs', // Load a custom template
+    }),
     new ExtractTextPlugin({
       filename: 'App.css',
       disable: !isProd,
