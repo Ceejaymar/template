@@ -2,3 +2,4 @@ node_modules
 .DS_Store
 bundle
 config.json
+npm-debug.log
