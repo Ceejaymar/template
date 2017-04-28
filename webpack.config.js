@@ -14,7 +14,7 @@ const cssProd = ExtractTextPlugin.extract({
 const cssConfig = isProd ? cssProd : cssDev;
 
 module.exports = {
-  entry: './src/App.js',
+  entry: './src/App.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js'
@@ -26,7 +26,7 @@ module.exports = {
         use: cssConfig
       },
       {
-        test: /\.js$/,
+        test: [/\.jsx?$/, /\.js?$/],
         exclude: /node_modules/,
         use: 'babel-loader'
       },
@@ -42,7 +42,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 9000,
+    // port: 9000,
     stats: 'minimal',
     open: true,
     hot: true
